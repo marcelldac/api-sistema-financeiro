@@ -1,4 +1,4 @@
-# Projeto DIO: Criação de API Rest com **Go** !
+# Criando API Rest com GO.
 
 Para executar:
 
