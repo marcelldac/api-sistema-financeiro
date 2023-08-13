@@ -6,6 +6,8 @@ import (
 	"io"
 	"net/http"
 	"time"
+
+	"github.com/marcelldac/praticando-golang/dio-expert-session-finance/model/transaction"
 )
 
 func main() {
@@ -16,15 +18,6 @@ func main() {
 	http.ListenAndServe(":8080", nil)
 
 }
-
-type Transaction struct {
-	Title     string    `json:"title"`
-	Amount    float32   `json:"amount"`
-	Type      int       `json:"type"`
-	CreatedAt time.Time `json:"created_at"`
-}
-
-type Transactions []Transaction
 
 func getTransactions(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "GET" {
@@ -37,8 +30,8 @@ func getTransactions(w http.ResponseWriter, r *http.Request) {
 	var layout = "2006-01-02T15:04:05"
 	salaryReceived, _ := time.Parse(layout, "2020-04-05T11:45:26")
 
-	var transactions = Transactions{
-		Transaction{
+	var transactions = transaction.Transactions{
+		transaction.Transaction{
 			Title:     "Salário",
 			Amount:    1200.0,
 			Type:      0,
@@ -55,7 +48,7 @@ func createATransaction(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	var res = Transactions{}
+	var res = transaction.Transactions{}
 	var body, _ = io.ReadAll(r.Body)
 
 	_ = json.Unmarshal(body, &res)
