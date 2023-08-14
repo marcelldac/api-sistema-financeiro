@@ -1,7 +1,9 @@
-# Criando API Rest com GO.
+# Criação de API Rest com GO.
 
-Para executar:
+- As dependencias devem ser instaladas.
 
-``` 
+- Para executar:
+
+```
 go run <nome-do-arquivo.go>
 ```
