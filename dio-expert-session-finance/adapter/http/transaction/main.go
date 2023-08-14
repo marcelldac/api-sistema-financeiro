@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"io"
 	"net/http"
-	"time"
 
 	"github.com/marcelldac/praticando-golang/dio-expert-session-finance/model/transaction"
+	"github.com/marcelldac/praticando-golang/dio-expert-session-finance/util"
 )
 
 func GetTransactions(w http.ResponseWriter, r *http.Request) {
@@ -18,15 +18,12 @@ func GetTransactions(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "application/json")
 
-	var layout = "2006-01-02T15:04:05"
-	salaryReceived, _ := time.Parse(layout, "2020-04-05T11:45:26")
-
 	var transactions = transaction.Transactions{
 		transaction.Transaction{
 			Title:     "Salário",
 			Amount:    1200.0,
 			Type:      0,
-			CreatedAt: salaryReceived,
+			CreatedAt: util.StringToTime("2020-04-05T11:45:26"),
 		},
 	}
 
