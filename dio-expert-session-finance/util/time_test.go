@@ -8,4 +8,12 @@ func TestStringToTime(t *testing.T) {
 	if convertedTime.Year() != 2019 {
 		t.Errorf("Espera que o ano seja 2019")
 	}
+
+	if convertedTime.Month() != 02 {
+		t.Errorf("Espera que o mês seja 02")
+	}
+
+	if convertedTime.Hour() != 10 {
+		t.Errorf("Espera que o hora seja 10")
+	}
 }
