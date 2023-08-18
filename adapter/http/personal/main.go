@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/marcelldac/praticando-golang/model/personal"
-	"github.com/marcelldac/praticando-golang/util"
+	"github.com/marcelldac/api-sistema-financeiro/model/personal"
+	"github.com/marcelldac/api-sistema-financeiro/util"
 )
 
 func GetPersonal(w http.ResponseWriter, r *http.Request) {

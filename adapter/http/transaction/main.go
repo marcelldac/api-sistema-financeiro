@@ -6,8 +6,8 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/marcelldac/praticando-golang/model/transaction"
-	"github.com/marcelldac/praticando-golang/util"
+	"github.com/marcelldac/api-sistema-financeiro/model/transaction"
+	"github.com/marcelldac/api-sistema-financeiro/util"
 )
 
 func GetTransactions(w http.ResponseWriter, r *http.Request) {
@@ -30,7 +30,7 @@ func GetTransactions(w http.ResponseWriter, r *http.Request) {
 	_ = json.NewEncoder(w).Encode(transactions)
 }
 
-func CreateATransaction(w http.ResponseWriter, r *http.Request) {
+func PostTransaction(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "POST" {
 		w.WriteHeader(http.StatusMethodNotAllowed)
 		return
@@ -39,7 +39,7 @@ func CreateATransaction(w http.ResponseWriter, r *http.Request) {
 	var res = transaction.Transactions{}
 	var body, _ = io.ReadAll(r.Body)
 
-	_ = json.Unmarshal(body, &res)
+	json.Unmarshal(body, &res)
 
 	fmt.Print(res)
 }

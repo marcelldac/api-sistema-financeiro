@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/marcelldac/praticando-golang/adapter/http/actuator"
-	"github.com/marcelldac/praticando-golang/adapter/http/personal"
-	"github.com/marcelldac/praticando-golang/adapter/http/transaction"
+	"github.com/marcelldac/api-sistema-financeiro/adapter/http/actuator"
+	"github.com/marcelldac/api-sistema-financeiro/adapter/http/personal"
+	"github.com/marcelldac/api-sistema-financeiro/adapter/http/transaction"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
@@ -21,7 +21,7 @@ func mainResponse(w http.ResponseWriter, r *http.Request) {
 func Init() {
 	http.HandleFunc("/", mainResponse)
 	http.HandleFunc("/transactions", transaction.GetTransactions)
-	http.HandleFunc("/transactions/create", transaction.CreateATransaction)
+	http.HandleFunc("/transactions/create", transaction.PostTransaction)
 	http.HandleFunc("/personal", personal.GetPersonal)
 	http.HandleFunc("/health", actuator.Health)
 	http.Handle("/metrics", promhttp.Handler())
