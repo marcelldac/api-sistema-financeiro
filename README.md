@@ -1,6 +1,8 @@
-# Criação de API Rest com GO.
+# Criação de API de sistema financeiro com GO.
 
-## Para executar:
+### [Documentação pelo Postman](https://documenter.getpostman.com/view/27634188/2s9Y5SW5ZB)
+
+### Para executar:
 
 - Passo 1: Instalar as dependencias:
 
