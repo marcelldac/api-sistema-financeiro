@@ -6,8 +6,8 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/marcelldac/praticando-golang/dio-expert-session-finance/model/transaction"
-	"github.com/marcelldac/praticando-golang/dio-expert-session-finance/util"
+	"github.com/marcelldac/praticando-golang/model/transaction"
+	"github.com/marcelldac/praticando-golang/util"
 )
 
 func GetTransactions(w http.ResponseWriter, r *http.Request) {
