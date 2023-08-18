@@ -5,6 +5,7 @@ import (
 	"net/http"
 
 	"github.com/marcelldac/praticando-golang/adapter/http/actuator"
+	"github.com/marcelldac/praticando-golang/adapter/http/personal"
 	"github.com/marcelldac/praticando-golang/adapter/http/transaction"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
@@ -21,6 +22,7 @@ func Init() {
 	http.HandleFunc("/", mainResponse)
 	http.HandleFunc("/transactions", transaction.GetTransactions)
 	http.HandleFunc("/transactions/create", transaction.CreateATransaction)
+	http.HandleFunc("/personal", personal.GetPersonal)
 	http.HandleFunc("/health", actuator.Health)
 	http.Handle("/metrics", promhttp.Handler())
 	http.ListenAndServe(":8080", nil)
