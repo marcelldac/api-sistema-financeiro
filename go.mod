@@ -1,4 +1,4 @@
-module github.com/marcelldac/praticando-golang
+module github.com/marcelldac/api-sistema-financeiro
 
 go 1.21.0
 
