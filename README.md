@@ -1,17 +1,15 @@
-# Criação de API de sistema financeiro com GO.
+# Creating a Financial System API with GO.
 
-### [Documentação pelo Postman](https://documenter.getpostman.com/view/27634188/2s9Y5SW5ZB)
+### To run:
 
-### Para executar:
-
-- Passo 1: Instalar as dependencias:
+- Step 1: Install dependencies:
 
 ```
 go mod download
 ```
 
-- Passo 2: Executar:
+- Step 2: Execute:
 
 ```
-go run <nome-do-arquivo.go>
+go run <filename.go>
 ```
