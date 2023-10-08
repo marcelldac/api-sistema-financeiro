@@ -1,15 +1,15 @@
-# Creating a Financial System API with GO.
+# API de Sistema Financeiro
 
-### To run:
+### Rodar:
 
-- Step 1: Install dependencies:
+- Step 1: Instalar dependencias:
 
 ```
 go mod download
 ```
 
-- Step 2: Execute:
+- Step 2: Executar:
 
 ```
-go run <filename.go>
+go run <nome-do-arquivo.go>
 ```
